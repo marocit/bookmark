@@ -24,11 +24,13 @@
     <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#addCategoryModal">
       <i class="fa fa-plus"></i> Add Category
     </button>
-    <div class="list-group">
-      @foreach($sidebarCategories as $category)
-        <a class="list-group-item list-group-item-action" href="{{route('bookmark.category.index', $category->name)}}">{{ $category->name }} <span class="badge badge-secondary ml-3">{{ $category->bookmarks()->count() }}</span> </a>
-      @endforeach
-    </div>
+    @if($sidebarCategories->count())
+      <div class="list-group">
+        @foreach($sidebarCategories as $category)
+          <a class="list-group-item list-group-item-action" href="{{route('bookmark.category.index', $category->name)}}">{{ $category->name }} <span class="badge badge-secondary ml-3">{{ $category->bookmarks()->count() }}</span> </a>
+        @endforeach
+      </div>
+    @endif
     <h4 class="text-muted mb-3 mt-5 text-uppercase">Twitter <i class="fa fa-twitter"></i> </h4>
     <div class="c-line-left"></div>
     <!-- <div class="list-group">
@@ -58,7 +60,7 @@
           </div>
           <div class="form-group">
             {!! Form::label('category_id', 'Kategorie:') !!}
-            {!! Form::select('category_id', [''=>'Choose Categories'] + $categories , null, ['class'=>'form-control']) !!}
+            {!! Form::select('category_id', [''=>'Choose Categories'] + $categories ? $categories : 'Nichts' , null, ['class'=>'form-control']) !!}
           </div>
       </div>
       <div class="modal-footer">

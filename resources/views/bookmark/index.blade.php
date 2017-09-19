@@ -4,6 +4,7 @@
 
 <deletebookmark inline-template>
     <div class="col-md-8">
+    @if($bookmarks->count())
       @foreach($bookmarks as $bookmark)
           <div class="card mb-3" id="bookmark-{{ $bookmark->id }}">
             @if( $bookmark->cover )
@@ -21,6 +22,7 @@
             </div>
           </div>
       @endforeach
+    @endif
     </div>
 </deletebookmark>
 
