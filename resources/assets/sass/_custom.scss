@@ -1,0 +1,35 @@
+// Custom
+//
+// Override the Bootstrap defaults without modifying key, versioned files.
+
+$enable-rounded: false;
+$bg-color:#333;
+$primary-color:#008ed6;
+
+body {
+  background: $bg-color;
+}
+
+.navbar{
+  border-bottom: $primary-color solid 2px;
+  opacity: 0.8;
+}
+
+// .container {
+//   max-width: 1640px!important;
+// }
+
+.navbar-text {
+  font-size: 14px;
+}
+
+.c-line-left {
+  width: 30px;
+  height: 3px;
+  margin: 0 0 30px 0;
+  background-color: #6e8cd7;
+}
+
+#header-section{
+  background-image: url("/img/pattern-bg-lightblue.jpg");
+}
