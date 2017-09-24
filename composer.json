@@ -16,6 +16,7 @@
         "laravel/scout": "^3.0",
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.5",
+        "pusher/pusher-php-server": "^3.0",
         "thujohn/twitter": "^2.2"
     },
     "require-dev": {

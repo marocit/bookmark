@@ -49,11 +49,11 @@
     <div class="modal-content">
       <div class="modal-header bg-primary text-white">
         <h5 class="modal-title">Add Bookmark</h5>
+
         <button class="close" data-dismiss="modal"><span>&times;</span></button>
       </div>
       {!! Form::open(['route' => 'bookmark.store']) !!}
       <div class="modal-body">
-
           <div class="form-group">
             {!! Form::label('url', 'URL:') !!}
             {!! Form::text('url', null, ['class'=>'form-control']) !!}
@@ -64,9 +64,9 @@
           </div>
       </div>
       <div class="modal-footer">
-        <button class="btn btn-secondary" data-dismiss="modal">Close</button>
         {!! Form::submit('Add Bookmark', ['class' => 'btn btn-primary']) !!}
         {!! Form::close() !!}
+        <button class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
 

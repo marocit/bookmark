@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-
+<counter></counter>
 <deletebookmark inline-template>
     <div class="col-md-8">
     @if($bookmarks->count())
       @foreach($bookmarks as $bookmark)
           <div class="card mb-3" id="bookmark-{{ $bookmark->id }}">
             @if( $bookmark->cover )
-              <img class="card-img-top" src="{{ asset('images/' . $bookmark->cover) }}" alt="Card image cap">
+              <img class="card-img-top img-fluid" src="{{ asset('images/' . $bookmark->cover) }}" alt="Card image cap">
             @endif
             <div class="card-body">
                 <h4 class="card-title"><a href="{{ $bookmark->url }}">{{ $bookmark->title }}</a></h4>
@@ -23,10 +23,11 @@
           </div>
       @endforeach
     @endif
+
     </div>
 </deletebookmark>
 
-  <div class="col-md-3 ml-auto">
+  <div class="col ml-auto">
     @include('layouts.sidebar')
   </div>
 

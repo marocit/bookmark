@@ -14,6 +14,7 @@ try {
     require('bootstrap');
 } catch (e) {}
 
+
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the
@@ -23,6 +24,17 @@ try {
 window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+import Echo from "laravel-echo"
+
+window.Pusher = require('pusher-js');
+
+window.Echo = new Echo({
+    broadcaster: 'pusher',
+    key: 'aa5da5f2996170cd545e',
+    cluster: 'eu',
+    encrypted: true
+});
 
 /**
  * Next we will register the CSRF Token as a common header with Axios so that

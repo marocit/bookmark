@@ -29,12 +29,17 @@
                     <li class="nav-item"><a href="{{ route('login') }}" class="nav-link">Login</a></li>
                     <li class="nav-item"><a href="{{ route('register') }}" class="nav-link">Register</a></li>
                 @else
-                 <li class="nav-item px-2">
-                        <a href="{{ route('bookmark') }}" class="nav-link">Bookmark</a>
-                    </li>
+                <li class="nav-item px-2">
+                    <a href="{{ route('bookmark') }}" class="nav-link">Bookmark</a>
+                </li>
+
                     <li class="nav-item px-2 dropdown">
                         <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> {{ Auth::user()->name }}</a>
+                           aria-haspopup="true" aria-expanded="false">
+                            <img src="{{ Auth::user()->avatar() }}" class="figure-img img-fluid rounded">
+                           {{ Auth::user()->name }}
+                       </a>
+
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a href="{{ route('logout') }}" class="dropdown-item"
                                onclick="event.preventDefault();document.getElementById('logout-form').submit();">

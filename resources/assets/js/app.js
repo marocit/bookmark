@@ -18,6 +18,7 @@ window.Vue = require('vue');
 // Vue.component('example', require('./components/Example.vue'));
 Vue.component('clock', require('./components/Clock.vue'));
 Vue.component('deletebookmark', require('./components/Delete.vue'));
+Vue.component('counter', require('./components/Counter.vue'));
 
 const app = new Vue({
     el: '#app'

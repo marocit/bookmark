@@ -11,6 +11,19 @@
 |
 */
 
-Broadcast::channel('App.User.{id}', function ($user, $id) {
-    return (int) $user->id === (int) $id;
+// Broadcast::channel('App.User.{id}', function ($user, $id) {
+//     return (int) $user->id === (int) $id;
+// });
+
+Broadcast::channel('counter', function ($user) {
+    return [
+      'name' => $user->name,
+    ];
 });
+
+// Broadcast::channel('video', function ($user) {
+//     return [
+//         'id' => $user->id,
+//         'name' => $user->name,
+//     ];
+// });

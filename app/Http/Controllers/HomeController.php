@@ -12,6 +12,7 @@ use Intervention\Image\Facades\Image;
 
 class HomeController extends Controller
 {
+
 /**
  * Create a new controller instance.
  *
