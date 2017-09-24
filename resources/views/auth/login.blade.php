@@ -12,32 +12,29 @@
                             {!! csrf_field() !!}
 
                             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <label class="col-md-4 control-label">E-Mail Address</label>
+                                <label for="email" class="control-label">E-Mail Address</label>
 
-                                <div clacc="col-md-12">
-                                    <input type="email" class="form-control" name="email"
+                                    <input type="email" class="form-control" id="email" name="email"
                                            value="{{ old('email') }}">
 
                                     @if ($errors->has('email'))
-                                        <span class="form-text text-muted">
+                                        <small class="form-text text-muted">
                                             {{ $errors->first('email') }}
-                                        </span>
+                                        </small>
                                     @endif
-                                </div>
                             </div>
 
                             <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                <label class="col-md-4 control-label">Password</label>
+                                <label for="password" class="control-label">Password</label>
 
-                                <div>
-                                    <input type="password" class="form-control" name="password">
+                                    <input type="password" class="form-control" id="password" name="password">
 
                                     @if ($errors->has('password'))
-                                        <span class="form-text text-muted">
+                                        <small class="form-text text-muted">
                                             {{ $errors->first('password') }}
-                                        </span>
+                                        </small>
                                     @endif
-                                </div>
+
                             </div>
 
                             <div class="form-group">
