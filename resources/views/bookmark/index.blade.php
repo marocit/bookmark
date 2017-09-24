@@ -15,7 +15,7 @@
               {{ $bookmark->description }}
               <div class="info d-flex justify-content-start">
                 <small class="text-muted ">Created at: {{ $bookmark->created_at->diffForHumans() }}</small>
-                <span class="ml-auto"><a href="#" class="badge badge-primary">{{ $bookmark->category->name }}</a>
+                <span class="ml-auto"><a href="{{route('bookmark.category.index', $bookmark->category->name)}}" class="badge badge-primary">{{ $bookmark->category->name }}</a>
                   <a href="#" class="badge badge-danger" @click="test({{ $bookmark->id }})">Delete</a>
                 </span>
               </div>

@@ -2223,6 +2223,9 @@
   border-bottom: #74a8e0 solid 2px;
   opacity: 0.8;
 }
+.badge {
+  font-weight: 500 !important;
+}
 .navbar-text {
   font-size: 14px;
 }
