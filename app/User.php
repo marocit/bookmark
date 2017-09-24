@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -15,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'last_login'
+        'name', 'email', 'password', 'last_login', 'active', 'activation_token'
     ];
 
     /**
@@ -27,14 +28,28 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    // public function isAdmin()
+    // {
+    //     if( $this->isAdmin == true ) {
+    //         return true;
+    //     }
+
+    //     return false;
+    // }
+
     public function avatar()
     {
         $email = $this->email;
-        $default = '';
+        $default = 'wavatar';
         $size = 30;
 
         $grav_url = "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
 
         return $grav_url;
+    }
+
+    public function scopeByActivationColumns(Builder $builder, $email, $token)
+    {
+        return $builder->where('email', $email)->where('activation_token', $token);
     }
 }

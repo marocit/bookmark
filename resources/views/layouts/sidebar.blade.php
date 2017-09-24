@@ -13,6 +13,10 @@
           </span>
         </div>
       </form>
+    <h4 class="mb-3 mt-5 text-muted text-uppercase">Users Online</h4>
+    <div class="c-line-left"></div>
+    <counter></counter>
+
     <h4 class="mb-3 mt-5 text-muted text-uppercase">Bookmark</h4>
     <div class="c-line-left"></div>
     <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#addBookmarkModal">

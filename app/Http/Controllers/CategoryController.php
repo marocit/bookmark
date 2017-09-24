@@ -17,7 +17,7 @@ class CategoryController extends Controller
     {
       $bookmarks = $category->bookmarks()->latest()->Paginate(5);
 
-      return view('category.index', compact('bookmarks'));
+      return view('bookmark.index', compact('bookmarks'));
     }
 
     public function store(Request $request)

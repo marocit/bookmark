@@ -1,17 +1,7 @@
 <template>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="card">
-                    <div class="card-header">Realtime Counter</div>
-
-                    <div class="card-body">
-                        <p class="lead text-center">Online Now</p>
-                        <h1 class="text-center">{{ this.count }}</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="d-flex">
+        <p class="lead">Online Now:</p>
+        <p class="lead ml-2">{{ this.count }}</p>
     </div>
 </template>
 

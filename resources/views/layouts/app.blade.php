@@ -73,6 +73,10 @@
 
     <section id="main-section">
         <div class="container">
+            @include('layouts._alerts')
+        </div>
+
+        <div class="container">
             <div class="row">
                 @yield('content')
             </div>

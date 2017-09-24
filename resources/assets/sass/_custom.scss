@@ -3,12 +3,22 @@
 // Override the Bootstrap defaults without modifying key, versioned files.
 
 $enable-rounded: false;
-$bg-color:#333;
-$primary-color:#008ed6;
+$testcolor: #F6F5F5;
+$gray-dark: #F8F8F8;
+$gray-light: #2f2a37;
+$primary: #74a8e0;
+// $bg-color:#F6F5F5!important;
+// $primary-color:#008ed6;
+$primary-color: #74a8e0;
 
-body {
-  background: $bg-color;
-}
+$body-bg:    $gray-dark;
+$body-color: $gray-light;
+
+
+
+// body {
+//   background-color: $bg-color;
+// }
 
 .navbar{
   border-bottom: $primary-color solid 2px;
@@ -32,4 +42,9 @@ body {
 
 #header-section{
   background-image: url("/img/pattern-bg-lightblue.jpg");
+}
+
+.test-img{
+  height:100px;
+  width:100px;
 }

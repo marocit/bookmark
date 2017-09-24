@@ -17,8 +17,13 @@
 
 Auth::routes();
 
+
+Route::get('/', 'HomeController@bookmark')->name('bookmark')->middleware('auth');
+
+Route::get('/auth/activate', 'Auth\ActivationController@activate')->name('auth.activate');
+
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/', 'HomeController@bookmark')->name('bookmark');
+
 Route::post('/bookmarks', 'HomeController@getResponseUrl')->name('bookmark.store');
 Route::get('/foo', 'HomeController@foo')->name('bookmark.foo');
 Route::get('/bookmark/search/{search}', 'HomeController@search')->name('bookmark.search');

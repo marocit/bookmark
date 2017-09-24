@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Carbon\Carbon;
+use Illuminate\Http\Request;
+use App\Jobs\UpdateLastLogin;
+use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -25,7 +29,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/bookmark';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -35,5 +39,28 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    protected function authenticated(Request $request, $user)
+    {
+        $this->dispatch(new UpdateLastLogin($user, Carbon::now()));
+    }
+
+    protected function validateLogin(Request $request)
+    {
+        $this->validate($request, [
+            $this->username() => [
+                'required',
+                'string',
+                Rule::exists('users')->where(function ($query) {
+                    $query->where('active', true);
+                })
+            ],
+
+            'password' => 'required|string',
+
+        ], [
+            $this->username() . '.exists' => 'No account found, or you need to activate your account!'
+        ]);
     }
 }

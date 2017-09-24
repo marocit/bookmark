@@ -13,15 +13,20 @@ use Intervention\Image\Facades\Image;
 class HomeController extends Controller
 {
 
+     public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
 /**
  * Create a new controller instance.
  *
  * @return void
  */
-public function __construct()
-{
-    $this->middleware('auth');
-}
+// public function __construct()
+// {
+//     $this->middleware('admin');
+// }
 
 /**
  * Show the application dashboard.
@@ -50,7 +55,7 @@ public function bookmark()
 
     // $bookmarks->get();
 
-    $bookmarks = $bookmarks->Paginate(5);
+    $bookmarks = $bookmarks->Paginate(20);
 
     // $categories = Category::pluck('name', 'id')->all();
     return view('bookmark.index', compact('categories', 'bookmarks'));
