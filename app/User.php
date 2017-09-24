@@ -19,6 +19,12 @@ class User extends Authenticatable
         'name', 'email', 'password', 'last_login', 'active', 'activation_token'
     ];
 
+     protected $dates = [
+        'created_at',
+        'updated_at',
+        'last_login'
+    ];
+
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -52,4 +58,6 @@ class User extends Authenticatable
     {
         return $builder->where('email', $email)->where('activation_token', $token);
     }
+
+
 }

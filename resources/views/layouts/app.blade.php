@@ -33,7 +33,7 @@
                     <a href="{{ route('bookmark') }}" class="nav-link">Bookmark</a>
                 </li>
 
-                    <li class="nav-item px-2 dropdown">
+                    <li class="nav-item px-5 dropdown">
                         <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false">
                             <img src="{{ Auth::user()->avatar() }}" class="figure-img img-fluid rounded">
@@ -41,6 +41,10 @@
                        </a>
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                            <small class="dropdown-item">
+                               Last Login: {{ Auth::user()->last_login->diffForHumans() }}
+                            </small>
                             <a href="{{ route('logout') }}" class="dropdown-item"
                                onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                 <i class="fa fa-sign-out"></i> Logout
@@ -50,7 +54,11 @@
                                   style="display: none;">
                                 {{ csrf_field() }}
                             </form>
+
+
                         </div>
+
+
                     </li>
                 @endif
             </ul>
