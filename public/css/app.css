@@ -3788,7 +3788,7 @@ pre code {
 .form-control:focus {
   color: #495057;
   background-color: #fff;
-  border-color: white;
+  border-color: #625F63;
   outline: none;
 }
 .form-control::-webkit-input-placeholder {
@@ -9478,5 +9478,32 @@ a.text-dark:focus, a.text-dark:hover {
 }
 .invisible {
   visibility: hidden !important;
+}
+@media (max-width: 767px) {
+  .test-img {
+    position: absolute;
+    visibility: hidden;
+  }
+
+  .mobile-button {
+    visibility: visible;
+  }
+
+  .btn-group.special {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .special .btn {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+}
+@media (min-width: 576px) {
+  .mobile-button {
+    visibility: hidden;
+  }
 }
 

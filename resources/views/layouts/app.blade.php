@@ -54,11 +54,7 @@
                                   style="display: none;">
                                 {{ csrf_field() }}
                             </form>
-
-
                         </div>
-
-
                     </li>
                 @endif
             </ul>
@@ -66,7 +62,8 @@
 
     </nav>
 
-    <section id="header-section" class="pt-5 mb-4 py-2 bg-light ">
+
+    <section id="header-section" class="pt-5 mb-0 py-2 bg-light ">
       <div class="container">
         <div class="row">
           <div class="col text-center">
@@ -78,6 +75,17 @@
         </div>
       </div>
     </section>
+
+    <div class="d-flex justify-content-center">
+        <div class="btn-group" role="group">
+            <button class="btn btn-secondary mobile-button" data-toggle="modal" data-target="#addBookmarkModal">
+                <i class="fa fa-plus"></i> Add Bookmark
+            </button>
+             <button class="btn btn-secondary  mobile-button" data-toggle="modal" data-target="#addCategoryModal">
+               <i class="fa fa-plus"></i> Add Category
+            </button>
+        </div>
+    </div>
 
     <section id="main-section">
         <div class="container">

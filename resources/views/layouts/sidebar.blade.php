@@ -95,8 +95,8 @@
 
       </div>
       <div class="modal-footer">
-        <button class="btn btn-secondary" data-dismiss="modal">Close</button>
         {!! Form::submit('Add Category', ['class' => 'btn btn-primary']) !!}
+        <button class="btn btn-secondary" data-dismiss="modal">Close</button>
         {!! Form::close() !!}
       </div>
 

@@ -8,3 +8,29 @@
 
 // Bootstrap
 @import "node_modules/bootstrap/scss/bootstrap";
+
+
+@include media-breakpoint-down(sm) {
+  .test-img {
+    position: absolute;
+    visibility: hidden;
+  }
+
+  .mobile-button {
+    visibility: visible;
+  }
+
+  .btn-group.special {
+  display: flex;
+}
+
+.special .btn {
+  flex: 1
+}
+}
+
+@include media-breakpoint-up(sm) {
+  .mobile-button {
+    visibility: hidden;
+  }
+}
