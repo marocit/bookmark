@@ -32,6 +32,9 @@
                 <li class="nav-item px-2">
                     <a href="{{ route('bookmark') }}" class="nav-link">Bookmark</a>
                 </li>
+                <li class="nav-item px-2">
+                    <a href="{{ route('cryptocurrency') }}" class="nav-link">CryptoCurrency</a>
+                </li>
 
                     <li class="nav-item px-5 dropdown">
                         <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
@@ -77,7 +80,7 @@
     </section>
 
     <div class="d-flex justify-content-center">
-        <div class="btn-group" role="group">
+        <div class="btn-group btn-group-justified" role="group">
             <button class="btn btn-secondary mobile-button" data-toggle="modal" data-target="#addBookmarkModal">
                 <i class="fa fa-plus"></i> Add Bookmark
             </button>

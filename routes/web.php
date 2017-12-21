@@ -34,3 +34,5 @@ Route::get('/bookmark/category/{category}', 'CategoryController@index')->name('b
 Route::post('/bookmark/category', 'CategoryController@store')->name('bookmark.category.store');
 
 Route::get('/twitter', 'HomeController@twitterTest')->name('twitter');
+
+Route::get('/cryptocurrency', 'CryptoController@index')->name('cryptocurrency');

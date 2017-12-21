@@ -6,9 +6,10 @@
 // Variables
 @import "custom";
 
+
 // Bootstrap
 @import "node_modules/bootstrap/scss/bootstrap";
-
+@import "crypto";
 
 @include media-breakpoint-down(sm) {
   .test-img {
@@ -34,3 +35,4 @@
     visibility: hidden;
   }
 }
+

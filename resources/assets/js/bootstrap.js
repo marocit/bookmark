@@ -23,7 +23,18 @@ try {
 
 window.axios = require('axios');
 
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+//window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+window.axios.defaults.headers.common ={
+    //'Accept': 'application/json',
+    //'Content-Type': 'application/json',
+    //'X-Requested-With': 'XMLHttpRequest',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
+    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE'
+};
+
+window.axios.defaults.crossDomain = true;
 
 import Echo from "laravel-echo"
 
