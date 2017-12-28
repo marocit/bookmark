@@ -8,6 +8,8 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+import Vue2Filters from 'vue2-filters'
+Vue.use(Vue2Filters)
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

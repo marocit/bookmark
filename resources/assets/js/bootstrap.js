@@ -23,18 +23,21 @@ try {
 
 window.axios = require('axios');
 
-//window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
+//window.axios.defaults.headers['Content-Type'] = 'application/json';
 window.axios.defaults.headers.common ={
     //'Accept': 'application/json',
     //'Content-Type': 'application/json',
     //'X-Requested-With': 'XMLHttpRequest',
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
-    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE'
+    //'Access-Control-Allow-Origin': 'test.de',
+    //'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
+    //'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+    //'Access-Control-Request-Method': '*'
 };
 
-window.axios.defaults.crossDomain = true;
+//window.axios.defaults.withCredentials = true;
+//axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
 import Echo from "laravel-echo"
 
@@ -42,7 +45,7 @@ window.Pusher = require('pusher-js');
 
 window.Echo = new Echo({
     broadcaster: 'pusher',
-    key: 'aa5da5f2996170cd545e',
+    key: '4d4d0650064cd34cabae',
     cluster: 'eu',
     encrypted: true
 });
@@ -53,13 +56,13 @@ window.Echo = new Echo({
  * a simple convenience so we don't have to attach every token manually.
  */
 
-let token = document.head.querySelector('meta[name="csrf-token"]');
+//let token = document.head.querySelector('meta[name="csrf-token"]');
 
-if (token) {
-    window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
-} else {
-    console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
-}
+//if (token) {
+//    window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+//} else {
+//    console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+//}
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
